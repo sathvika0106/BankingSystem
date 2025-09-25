@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Online Banking</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="homepage">
+ <div class="home-container">
+    <h1>Welcome to <span>Online Banking</span></h1>
+    <p class="subtitle">Secure. Fast. Reliable.</p>
+    <div class="action-buttons">
+        <a href="{{ url_for('register') }}" class="register">Register</a>
+        <a href="{{ url_for('login') }}" class="login">Login</a>
+    </div>
+</div>
+
+</body>
+</html>

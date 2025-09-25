@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transaction History</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Transaction History</h2>
+
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Type</th>
+        <th>Amount</th>
+        <th>Target Acc</th>
+        <th>Date</th>
+      </tr>
+      {% for t in transactions %}
+      <tr>
+        <td>{{ t.trans_id }}</td>
+        <td>{{ t.type }}</td>
+        <td>{{ "%.2f"|format(t.amount) }}</td>
+        <td>{{ t.target_acc if t.target_acc else '-' }}</td>
+        <td>{{ t.created_at }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+
+    <a href="/dashboard">⬅ Back to Dashboard</a>
+  </div>
+</body>
+</html>
